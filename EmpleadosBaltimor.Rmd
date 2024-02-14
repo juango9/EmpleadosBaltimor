@@ -11,8 +11,22 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 library(readr)
-Baltimore_City_Employee_Salaries_FY2015<-read_csv("data/Baltimore_City_Employee_Salaries_FY2015.csv", 
-    col_types = cols(HireDate = col_date(format = "%m/%d/%Y"), 
+datosRbase<-read_csv("data/Baltimore_City_Employee_Salaries_FY2015.csv", 
+    col_types = cols(HireDate = col_date(format = "%Y-%m-%d"), 
         AnnualSalary = col_number(), GrossPay = col_number()))
+```
+
+```{r}
+library(rio)
+datosRio<-import(file="data/Baltimore_City_Employee_Salaries_FY2015.csv")
+```
+
+#Importar linea a linea
+```{r}
+library(readr)
+fichero<-"data/Baltimore_City_Employee_Salaries_FY2015.csv"
+guess_encoding(file="data/Baltimore_City_Employee_Salaries_FY2015.csv")
+f<-file(fichero,encoding='ASCII')
+sol<-readline(con=f)
 ```
 
