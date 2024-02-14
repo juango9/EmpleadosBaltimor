@@ -1,0 +1,18 @@
+---
+title: "EmpleadosBaltimor"
+author: "Juan Gómez Diaz"
+date: "2024-02-14"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(readr)
+Baltimore_City_Employee_Salaries_FY2015<-read_csv("data/Baltimore_City_Employee_Salaries_FY2015.csv", 
+    col_types = cols(HireDate = col_date(format = "%m/%d/%Y"), 
+        AnnualSalary = col_number(), GrossPay = col_number()))
+```
+
