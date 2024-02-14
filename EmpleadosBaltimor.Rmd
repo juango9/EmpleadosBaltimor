@@ -27,6 +27,11 @@ library(readr)
 fichero<-"data/Baltimore_City_Employee_Salaries_FY2015.csv"
 guess_encoding(file="data/Baltimore_City_Employee_Salaries_FY2015.csv")
 f<-file(fichero,encoding='ASCII')
-sol<-readline(con=f)
+sol<-readLines(con=f)
+```
+
+```{r}
+guess_encoding('EmpleadosBaltimor.Rmd')
+
 ```
 
